@@ -1,6 +1,6 @@
 from mido import MidiFile
 from mido import tick2second
-import mido-extention-classes.MidiNote as MidiNote
+import mido_extension_classes.MidiNote as MidiNote
 
 """
 Midi Loader Class

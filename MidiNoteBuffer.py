@@ -1,4 +1,4 @@
-import mido-extention-classes.MidiNote as MidiNote
+import mido_extension_classes.MidiNote as MidiNote
 
 """
 MidiNoteBuffer Class

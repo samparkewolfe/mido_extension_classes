@@ -1,5 +1,5 @@
 
-import mido-extention-classes.MidiNote as MidiNote
+import mido_extension_classes.MidiNote as MidiNote
 from mido import Message, MidiFile, MidiTrack, MetaMessage, second2tick
 import copy
 
@@ -21,7 +21,7 @@ Usage:
     write(fileName):
         Converts all the MidiNoteObjects back to their original format of "note on -> note off" and writes them to file.
         Args:
-            fileName: the absolute path to write the midi file to (not including the .mid extention)
+            fileName: the absolute path to write the midi file to (not including the .mid extension)
 """
 
 class MidiNoteSaver:
