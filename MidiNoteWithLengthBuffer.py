@@ -1,28 +1,29 @@
 import mido_extension_classes.MidiNote as MidiNote
 
 """
-MidiNoteBuffer Class
+MidiNoteWithLengthBuffer Class
 
 Details:
-    This is a basic vector/list type object which should hold a collection of the custom MidiNote objectself.
+    This is a basic vector/list type object which should hold a collection of the custom MidiNoteWithLength objects.
     What's special about this object is it's interface with MidiNotes represented as lists or as MidiNote objects.
+    This makes processing you list of midinotes with the rest of python a little bit easier, rather than having to convert them to lists all the time.
 
 Usage:
     pushBackInfo(midiInfo)
-        Appends a MidiNote object to an internal list of MidiNote objects, converting a raw list of values representing a midi note.
+        Appends a MidiNoteWithLength object to an internal list of MidiNoteWithLength objects, converting a raw list of values representing a midi note.
         Args:
             midiInfo: a 4 dimentional list representing a notes pitch, velocity, time and length
 
     pushBackNote(self, note)
-        Appends a MidiNote object to the internal list of MidiNote objects.
+        Appends a MidiNoteWithLength object to the internal list of MidiNoteWithLength objects.
         Args:
-            note: a MidiNote object.
+            note: a MidiNoteWithLength object.
 
     getNotesAsList()
         returns all the notes in the interal list of MidiNote objects as a lists.
 """
 
-class MidiNoteBuffer:
+class MidiNoteWithLengthBuffer:
     def __init__(self):
         self.notes = []
         print("New Midi Buffer Made")
@@ -35,12 +36,12 @@ class MidiNoteBuffer:
         return self.notes
 
     def pushBackInfo(self, midiInfo):
-        self.notes.append(self.convertMidiInfoToMidiNote(midiInfo))
+        self.notes.append(self.convertMidiInfoToMidiNoteWithLength(midiInfo))
 
     def pushBackNote(self, note):
         self.notes.append(note)
 
-    def convertMidiInfoToMidiNote(self, midiInfo):
+    def convertMidiInfoToMidiNoteWithLength(self, midiInfo):
         note = MidiNote(pitch       = midiInfo[0],
                         velocity    = midiInfo[1],
                         time        = midiInfo[2],

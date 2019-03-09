@@ -1,17 +1,17 @@
 import mido_extension_classes.MidiNote as MidiNote
+import mido_extension_classes.MidiNoteWithLength as MidiNoteWithLength
 import copy
 
 """
 MidiQuantiser Class
 
 Details:
-    Restricts the pitch's of a list of MidiNote objects to a scale.
+    Restricts the pitch's of a list of MidiNote or MidiNoteWithLength objects to a scale.
 
 Usage:
     process (notes, scale, pitch = 16)
-
         Args:
-            notes: a list of MidiNote objects.
+            notes: a list of MidiNote or MidiNoteWithLength objects.
             scale: a list of intervals of a scale (see below for examples).
             pitch: the first note of the scale. e.g. 16 is an E.
 
