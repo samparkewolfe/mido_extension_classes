@@ -20,8 +20,8 @@ midiLoader = MidiLoader()
 notes = midiLoader.load(midifile)
 
 midiConverter = MidiConverter()
-midiConverter.convert (notes)
-midiConverter.convert (notes)
+notes = midiConverter.convert (notes)
+notes = midiConverter.convert (notes)
 
 MidiSaver = MidiSaver(notes)
 MidiSaver.write('MidiConverted')
