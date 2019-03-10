@@ -2,6 +2,28 @@ import mido_extension_classes.MidiNote as MidiNote
 import mido_extension_classes.MidiNoteWithLength as MidiNoteWithLength
 import copy
 
+"""
+MidiConverter Class
+Details:
+    Converts a list of either MidiNote or MidiNoteWithLength objects into the oposite type.
+    
+Usage:
+convert (notesToConvert)
+    Takes in a list of MidiNote or MidiNoteWithLength objects and returns a list of midi notes of the opposite type.
+    e.g. If given a list of MidiNote objects, the function will return a list of MidiNoteWithLength objects.
+    This process would involve calculating the length of each note in the list and then removing all the note off messages.
+    If given a list of MidiNoteWithLength objects, the function will create an "off" MidiNote object for each midi note at the correct time.
+    Then replace each MidiNoteWithLength with a MidiNote object with the same pitch, velocity and time but without the length attribute.
+
+        Args:
+            notesToConvert: a list of MidiNote or MidiNoteWithLength objects.
+        Return:
+            New list of MidiNote or MidiNoteWithLength objects.
+            
+All other functions are not intended for users use.
+
+Warning: The type of midi note in the list has to be the same for all midi notes in the list.
+"""
 
 class MidiConverter:
     def __init__(self):
